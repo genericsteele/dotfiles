@@ -52,7 +52,7 @@ let g:pear_tree_pairs = {
 set undofile
 set undodir=/Users/eric/.vim/undo/
 
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
@@ -330,7 +330,8 @@ let g:fugitive_gitlab_domains = ['https://gitlab.zgtools.net']
 " set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/bin/*,*.rdb,*/solr/*,*vendor/bundle/*
 set dictionary+=$HOME/.vim/dictionaries/rails-status-codes.txt
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
-let g:coc_node_path = "/Users/ericst/.zillow-bootstrap/files/nvm/versions/node/v14.18.1/bin/node"
+let g:coc_node_path = "/Users/ericst/.zillow-bootstrap/files/nvm/versions/node/v18.16.0/bin/node"
+" let g:coc_node_path = trim(system('nvm which 18'))
 
 " NERDTree Mappings "
 let NERDTreeMapOpenSplit='s'
@@ -349,6 +350,13 @@ let g:notes_directories = ['~/Dropbox/notes']
 let g:notes_smart_quotes = 0
 let g:notes_conceal_code = 0
 nmap <silent><Leader>mr :MostRecentNote<CR>
+
+" Github Copilot "
+
+let g:copilot_filetypes = {
+\ 'notes': v:false,
+\ }
+
 
 " YouCompleteMe
 
@@ -400,10 +408,10 @@ nmap <silent> ]c <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gr <Plug>(coc-references-used)
 
 " Code Actions
-nmap <Leader><CR> <Plug>(coc-codeaction)
+nmap <Leader><CR> <Plug>(coc-codeaction-curosr)
 vmap <Leader><CR> <Plug>(coc-codeaction-selected)
 
 " Formatting
@@ -478,7 +486,7 @@ nmap <Leader>cp :let @* = expand("%")<CR>
 nmap <Leader>] :Dash<CR>
 nmap <Leader><Tab> <C-w>p
 nmap <Leader>z 1z=
-nmap <Leader>d :Files<CR>
+nmap <Leader>d :GFiles<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>f :History<CR>
 nmap <Leader>c :Tags<CR>

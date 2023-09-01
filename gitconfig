@@ -1,58 +1,58 @@
 [user]
-	name = Eric Steele
-	email = ericst@zillowgroup.com
+    name = Eric Steele
+    email = ericst@zillowgroup.com
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
+    excludesfile = ~/.gitignore
+    editor = vim
 [color]
-  ui = auto
+    ui = auto
 [color "branch"]
-  current = yellow
-  local = 241
-  remote = green
+    current = yellow
+    local = 241
+    remote = green
 [color "diff"]
-  meta = yellow
-  frag = magenta
-  old = red
-  new = green
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
 [color "status"]
-  added = green
-  changed = yellow
-  untracked = magenta
+    added = green
+    changed = yellow
+    untracked = magenta
 [push]
-	default = current
+    default = current
 [init]
-	templatedir = ~/.git_template
+    templatedir = ~/.git_template
 [alias]
-	ctags = !.git/hooks/ctags
-	co = checkout
-  aa = !git add .
-  root = rev-parse --show-toplevel
-  cot = checkout --track
-  whoops = !sh -c 'git commit -am "Whoops" && git rebase -i HEAD^^'
-  damn = whoops
-  fuck = !sh -c 'git reset HEAD --hard && git clean -fd'
-	s = status
-	wip = !git add . && git commit -m \"wip\"
-  list = branch --sort=-committerdate
-  ls = branch --sort=-committerdate
-	diff-tests = "! git diff --diff-filter=ACMRTUXB --name-only master -- spec test | egrep '_(spec|test).rb' "
-	cl = !pipeline/changelog.sh
+    ctags = !.git/hooks/ctags
+    co = checkout
+    aa = !git add .
+    root = rev-parse --show-toplevel
+    cot = checkout --track
+    whoops = !sh -c 'git commit -am "Whoops" && git rebase -i HEAD^^'
+    damn = whoops
+    fuck = !sh -c 'git reset HEAD --hard && git clean -fd'
+    s = status
+    wip = !git add . && git commit -m \"wip\"
+    list = branch --sort=-committerdate
+    ls = branch --sort=-committerdate
+    diff-tests = "! git diff --diff-filter=ACMRTUXB --name-only master -- spec test | egrep '_(spec|test).rb' "
+    cl = !pipeline/changelog.sh
 [help]
-	autocorrect = 1
+    autocorrect = 1
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+    required = true
+    clean = git media clean %f
+    smudge = git media smudge %f
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+    clean = git hawser clean %f
+    smudge = git hawser smudge %f
+    required = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [fetch]
-	prune = true
+    prune = true
 
