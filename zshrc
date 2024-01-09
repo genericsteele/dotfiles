@@ -10,6 +10,25 @@ zle -N down-line-or-beginning-search
 [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
+# History
+
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=500000
+SAVEHIST=500000
+setopt appendhistory
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
+# Prompt
+
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+zstyle ':vcs_info:git:*' formats '%b'
+
+setopt PROMPT_SUBST
+PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+
 # Pyenv
 eval "$(pyenv init -)"
 
@@ -22,14 +41,19 @@ export LIBRARY_PATH=$(brew --prefix)/lib
 
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-. $HOME/.zillow-bootstrap/files/init
 
 # Go
 export GOPATH=$HOME/go
 path+=($GOPATH/bin)
 
+# Initialize rbenv
+eval "$(rbenv init - zsh)"
+
 # Initialize nvm
-__init_nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 autoload -U add-zsh-hook
 load-nvmrc() {
 local node_version="$(nvm version)"
@@ -53,3 +77,6 @@ load-nvmrc
 
 # Enable zsh prompt expansion
 setopt PROMPT_SUBST
+
+# Direnv
+eval "$(direnv hook zsh)"

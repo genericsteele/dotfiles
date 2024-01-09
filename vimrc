@@ -53,6 +53,7 @@ set undofile
 set undodir=/Users/eric/.vim/undo/
 
 set rtp+=/opt/homebrew/opt/fzf
+set rtp+=/usr/local/opt/fzf
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
@@ -330,7 +331,8 @@ let g:fugitive_gitlab_domains = ['https://gitlab.zgtools.net']
 " set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/bin/*,*.rdb,*/solr/*,*vendor/bundle/*
 set dictionary+=$HOME/.vim/dictionaries/rails-status-codes.txt
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
-let g:coc_node_path = "/Users/ericst/.zillow-bootstrap/files/nvm/versions/node/v18.16.0/bin/node"
+let g:coc_node_path = "/Users/eric/.nvm/versions/node/v20.8.0/bin/node"
+let g:coc_global_extensions = ['coc-solargraph']
 " let g:coc_node_path = trim(system('nvm which 18'))
 
 " NERDTree Mappings "
