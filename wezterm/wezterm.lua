@@ -8,7 +8,7 @@ config.font_size = 18.0
 
 -- Color Scheme
 
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "Kanagawa (Gogh)"
 
 -- Window Stuff
 
@@ -26,6 +26,5 @@ config.initial_rows = 72
 -- Misc
 
 config.prefer_egl = true
-config.default_cwd = "/Users/ericsteele/code/ezcater/ez-rails/"
 
 return config
