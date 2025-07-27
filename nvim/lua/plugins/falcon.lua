@@ -1,3 +1,4 @@
 return {
-  { "fenetikm/falcon" },
+  "fenetikm/falcon",
+  lazy = true,
 }

@@ -6,10 +6,4 @@ return {
       style = "night",
     },
   },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "tokyonight",
-    },
-  },
 }
