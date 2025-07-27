@@ -7,3 +7,4 @@ local opt = vim.opt
 opt.listchars = "trail:~,tab:>-,lead:∙,nbsp:␣"
 opt.title = true
 opt.culopt = "number"
+opt.exrc = true
