@@ -4,7 +4,8 @@
 
 local map = vim.keymap.set
 
-map("n", "<Leader>L", "<cmd>vsplit #<cr>")
+map("n", "<Leader>L", "<cmd>vsplit #<cr>", { desc = "Split last file to the right" })
+map("n", "<Leader>fy", '<cmd>let @+ = expand("%")<cr>', { desc = "Yank file path to clipboard" })
 
 local function winMove(pressedKey)
   local currentWindow = vim.api.nvim_get_current_win()
@@ -21,13 +22,13 @@ end
 
 map("n", "<C-j>", function()
   winMove("j")
-end)
+end, { desc = "Move below or vsplit" })
 map("n", "<C-k>", function()
   winMove("k")
-end)
+end, { desc = "Move above or vsplit" })
 map("n", "<C-h>", function()
   winMove("h")
-end)
+end, { desc = "Move left or hsplit" })
 map("n", "<C-l>", function()
   winMove("l")
-end)
+end, { desc = "Move right or hsplit" })
