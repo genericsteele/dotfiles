@@ -46,6 +46,9 @@ autoload -U +X bashcompinit && bashcompinit
 export GOPATH=$HOME/go
 path+=($GOPATH/bin)
 
+# Wezterm
+path+=($PATH:/Applications/WezTerm.app/Contents/MacOS)
+
 # Initialize rbenv
 eval "$(rbenv init - zsh)"
 
