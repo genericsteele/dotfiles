@@ -4,6 +4,7 @@ return {
   opts = {
     formatters_by_ft = {
       eruby = { "erb_format" },
+      xml = { "xmllint" },
     },
   },
 }

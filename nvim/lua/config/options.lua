@@ -6,5 +6,10 @@ local opt = vim.opt
 
 opt.listchars = "trail:~,tab:>-,lead:∙,nbsp:␣"
 opt.title = true
+opt.relativenumber = false
 opt.culopt = "number"
 opt.exrc = true
+opt.wrap = true
+opt.breakindent = true
+opt.breakindentopt = "sbr"
+opt.showbreak = "↳ "
