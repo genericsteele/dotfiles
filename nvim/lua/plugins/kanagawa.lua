@@ -2,9 +2,9 @@ return {
   {
     "rebelot/kanagawa.nvim",
     opts = {
-      theme = "wave",
+      theme = "dragon",
       background = {
-        dark = "wave",
+        dark = "dragon",
         light = "lotus",
       },
       overrides = function()
@@ -26,13 +26,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-wave",
-    },
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    options = {
-      theme = "kanagawa-wave",
+      colorscheme = "kanagawa-dragon",
     },
   },
 }
