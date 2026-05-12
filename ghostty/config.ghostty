@@ -1,0 +1,29 @@
+# Font Settings
+
+font-family = DankMono Nerd Font
+font-size = 18
+
+# Theme Settings
+
+theme = Kanagawa Dragon
+
+# Window Settings
+
+window-height = 72
+window-width = 240
+window-step-resize = true
+macos-titlebar-style = hidden
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+window-padding-color = extend
+
+# Initial Directory
+
+window-inherit-working-directory = false
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
+
+# Icon
+
+macos-icon = chalkboard
